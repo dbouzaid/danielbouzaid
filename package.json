@@ -10,5 +10,11 @@
   },
   "dependencies": {
     "astro": "^5.13.11"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@types/sanitize-html": "^2.16.0"
   }
 }
