@@ -1,3 +1,7 @@
+---
+layout: ../layouts/Layout.astro
+---
+
 # About Me
 
 I am a full-stack software engineer who enjoys solving complex problems by creating innovative and delightful user interfaces. My goal is to build solutions that are both powerful and intuitive for the end-user.

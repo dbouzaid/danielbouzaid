@@ -1,24 +1,70 @@
+
+---
+import Navbar from "../components/Navbar.astro";
+---
+
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>Daniel Bouzaid</title>
   </head>
   <body>
+    <Navbar/>
     <slot />
+    <footer></footer>
   </body>
 </html>
 
-<style>
+<style is:global>
+  :root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-accent: #4b0082; /* Indigo */
+    --color-gray-100: #f8f9fa; /* Lightest */
+    --color-gray-300: #dee2e6;
+    --color-gray-500: #adb5bd;
+    --color-gray-700: #495057;
+    --color-gray-900: #212529; /* Darkest */
+    --color-accent-light: #9712f7;
+
+    /* Backgrounds */
+    --bg-primary: light-dark(var(--color-white), var(--color-gray-900));
+    --bg-secondary: light-dark(var(--color-gray-100), var(--color-black));
+
+    /* Text */
+    --text-primary: light-dark(var(--color-gray-900), var(--color-gray-100));
+    --text-secondary: light-dark(var(--color-gray-700), var(--color-gray-500));
+    --text-accent: light-dark(var(--color-accent), var(--color-accent-light));
+
+    /* Borders & UI */
+    --border-color: light-dark(var(--color-gray-300), var(--color-gray-700));
+
+    color-scheme: light dark;
+
+    font-family: "Exo 2", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
   html,
   body {
     margin: 0;
     width: 100%;
     height: 100%;
+  }
+
+  h1 {
+    color: var(--text-accent);
   }
 </style>

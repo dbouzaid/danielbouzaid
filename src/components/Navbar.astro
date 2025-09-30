@@ -1,0 +1,29 @@
+---
+const navItems = [
+  {
+    path: "/about",
+    label: "About Daniel",
+  },
+  {
+    path: "/skills",
+    label: "Skills",
+  },
+  {
+    path: "/workexperience",
+    label: "Work Experience",
+  },
+];
+---
+
+<header>
+  <h1>Hi</h1>
+  <nav>
+    {
+      navItems.map((item) => {
+        return <a href={item.path}>{item.label}</a>;
+      })
+    }
+  </nav>
+</header>
+
+<style></style>
