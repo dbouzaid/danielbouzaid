@@ -1,20 +1,15 @@
-
 ---
 import Navbar from "../components/Navbar.astro";
 ---
-
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300..700&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -22,49 +17,100 @@ import Navbar from "../components/Navbar.astro";
     <title>Daniel Bouzaid</title>
   </head>
   <body>
-    <Navbar/>
-    <slot />
-    <footer></footer>
+    <div class="main-container">
+      <Navbar />
+      <main>
+        <slot />
+      </main>
+    </div>
   </body>
 </html>
 
 <style is:global>
   :root {
-    --color-black: #000000;
-    --color-white: #ffffff;
-    --color-accent: #4b0082; /* Indigo */
-    --color-gray-100: #f8f9fa; /* Lightest */
-    --color-gray-300: #dee2e6;
-    --color-gray-500: #adb5bd;
-    --color-gray-700: #495057;
-    --color-gray-900: #212529; /* Darkest */
-    --color-accent-light: #9712f7;
+
+
+	--color-lavender-dark: #211e2a;
+	--color-lavendar-light: #F5F3F9;
+
+    --color-grey-100: #f8f9fa; /* Lightest */
+    --color-grey-300: #dee2e6;
+    --color-grey-500: #adb5bd;
+    --color-grey-700: #495057;
+    --color-grey-900: #212529; /* Darkest */
+
+    --color-accent-primary: #6B618D; /* Blue Violet for light mode */
+    --color-accent-light: #b596f3; /* Lighter purple for dark mode */
 
     /* Backgrounds */
-    --bg-primary: light-dark(var(--color-white), var(--color-gray-900));
-    --bg-secondary: light-dark(var(--color-gray-100), var(--color-black));
+    --bg-primary: light-dark(
+      var(--color-grey-100),
+      var(--color-lavender-dark)
+    );
 
     /* Text */
-    --text-primary: light-dark(var(--color-gray-900), var(--color-gray-100));
-    --text-secondary: light-dark(var(--color-gray-700), var(--color-gray-500));
-    --text-accent: light-dark(var(--color-accent), var(--color-accent-light));
+    --text-primary: light-dark(
+      var(--color-grey-900),
+      var(--color-grey-100)
+    );
+    --text-accent: light-dark(
+      var(--color-accent-primary),
+      var(--color-accent-light)
+    );
 
     /* Borders & UI */
-    --border-color: light-dark(var(--color-gray-300), var(--color-gray-700));
+    --border-color: light-dark(
+      var(--color-grey-300),
+      var(--color-grey-700)
+    );
 
     color-scheme: light dark;
 
-    font-family: "Exo 2", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Spline Sans", sans-serif;
+  }
+
+  /* Modern CSS Reset */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
   html,
   body {
     margin: 0;
+    padding: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
 
-  h1 {
-    color: var(--text-accent);
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+</style>
+
+<style>
+  .main-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    min-height: 100vh;
+    max-width: 1280px;
+    padding: 0rem 2rem;
+  }
+
+  main {
+    width: 60%;
+	padding: 2rem 0rem;
   }
 </style>
